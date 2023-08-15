@@ -1,0 +1,168 @@
+body {
+    margin: 0;
+}
+
+.game-panel {
+    border: 1px solid black;
+    width: 900px;
+    height: 900px;
+    overflow: auto;
+}
+
+.game-panel .panel {
+    width: 100%;
+}
+
+.game-panel .hidden {
+    display: none;
+}
+
+.game-caption {
+    display: flex;
+}
+
+.game-caption .game-symbol-container {
+    margin: auto 0px;
+    margin-left: auto;
+    display: flex;
+}
+
+.game-symbol-container {
+    margin-right: 0px;
+    transition: 0.5s;
+}
+
+.game-symbol-container.player-mode-active {
+    margin-right: 15px;
+}
+
+.game-symbol-container .player-mode-symbol,
+.game-symbol-container .card-mode-symbol {
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.game-symbol-container .player-mode-symbol {
+    margin-top: 50px;
+}
+
+.game-symbol-container .card-mode-symbol {
+    margin-top: 100px;
+}
+
+.game-symbol-container.player-mode-active .player-mode-symbol {
+    margin-top: 0px;
+    width: 100px;
+    height: 100px;
+    opacity: 1;
+}
+
+.game-symbol-container.card-mode-active .player-mode-symbol {
+    width: 80px;
+    height: 80px;
+    opacity: 1;
+    margin-right: -40px;
+}
+
+.game-symbol-container.card-mode-active .card-mode-symbol {
+    width: 80px;
+    height: 80px;
+    margin-top: 50px;
+    opacity: 1;
+}
+
+.game-caption .game-title {
+    margin-right: auto;
+}
+
+.game-caption .game-title img {
+    width: 200px;
+    height: auto;
+}
+
+.mode-pane {
+    display: flex;
+    padding-left: 150px;
+    padding-right: 150px;
+    margin-top: 10px;
+}
+
+.mode-item {
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mode-item .mode-image-container {
+    margin-bottom: 25px;
+}
+
+.mode-item .mode-image-container img {
+    width: 100%;
+    height: 100%;
+}
+
+.mode-item .mode-caption {
+    font-size: 23pt;
+    font-weight: bold;
+    text-align: center;
+}
+
+.intro-pane {
+    margin-top: 50px;
+    padding: 0px 125px;
+}
+
+.intro-inner-pane {
+    background-color: rgb(242, 242, 242);
+    height: 250px;
+    width: 100%;
+    border-radius: 10px;
+    display: table;
+}
+
+.lang-mode-container {
+    display: flex;
+    margin-top: 15px;
+    padding: 0px 150px;
+    border-radius: 100%;
+}
+
+.lang-mode-item {
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    border-width: 0px;
+    border-color: rgb(233, 1, 1);
+    border-style: solid;
+}
+
+.lang-mode-item.active {
+    border-width: 4px;
+}
+
+.lang-mode-item img {
+    margin: 2px;
+}
+
+.intro-container {
+    margin-top: 15px;
+}
+
+.intro-container {
+    color: rgb(30, 30, 30);
+}
+
+.intro-container .intro-title {
+    font-size: 20pt;
+    text-align: center;
+}
+
+.intro-container .intro-content {
+    margin-top: 15px;
+    font-size: 14pt;
+    text-align: center;
+}

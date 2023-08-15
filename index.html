@@ -1,9 +1,83 @@
 <!DOCTYPE html>
 <html>
 
+<head>
+    <link rel="stylesheet" type="text/css" href="./assets/css/common.css">
+</head>
+
 <body>
-    <div></div>
+    <div id="root" class="game-panel">
+        <div class="game-caption">
+            <div class="game-symbol-container">
+                <img class="player-mode-symbol" src="./assets/image/icons-SVG/icon-02-1p.svg">
+                <img class="card-mode-symbol" src="./assets/image/icons-SVG/icon-04-18game.svg">
+            </div>
+            <div class="game-title">
+                <img src="./assets/image/icons-SVG/icon-01-temptitle.svg">
+            </div>
+        </div>
+        <div class="player-mode-panel panel">
+            <div class="mode-pane">
+                <div class="mode-item player-mode" data-mode="1">
+                    <div class="mode-image-container">
+                        <img src="./assets/image/icons-SVG/icon-02-1p.svg">
+                    </div>
+                    <div class="mode-caption">1P</div>
+                </div>
+                <div class="mode-item player-mode" data-mode="2">
+                    <div class="mode-image-container">
+                        <img src="./assets/image/icons-SVG/icon-03-2p.svg">
+                    </div>
+                    <div class="mode-caption">1P v 2P</div>
+                </div>
+            </div>
+        </div>
+        <div class="card-mode-panel panel">
+            <div class="mode-pane">
+                <div class="mode-item card-mode" data-mode="18">
+                    <div class="mode-image-container">
+                        <img src="./assets/image/icons-SVG/icon-04-18game.svg">
+                    </div>
+                </div>
+                <div class="mode-item card-mode" data-mode="36">
+                    <div class="mode-image-container">
+                        <img src="./assets/image/icons-SVG/icon-05-36game.svg">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="intro-pane">
+            <div class="intro-inner-pane">
+                <div class="lang-mode-container">
+                    <div class="lang-mode-item active" data-lang="en">
+                        <img src="./assets/image/icons-SVG/icon-15-flag-gb.svg">
+                    </div>
+                    <div class="lang-mode-item" data-lang="de">
+                        <img src="./assets/image/icons-SVG/icon-17-flag-de.svg">
+                    </div>
+                    <div class="lang-mode-item" data-lang="fr">
+                        <img src="./assets/image/icons-SVG/icon-14-flag-fr.svg">
+                    </div>
+                    <div class="lang-mode-item" data-lang="es">
+                        <img src="./assets/image/icons-SVG/icon-18-flag-es.svg">
+                    </div>
+                    <div class="lang-mode-item" data-lang="ch">
+                        <img src="./assets/image/icons-SVG/icon-16-flag-ch.svg">
+                    </div>
+                </div>
+                <div class="intro-container">
+                    <div class="intro-title">
+                        INSTRUCTIONS
+                    </div>
+                    <div class="intro-content">
+                        Instructions go here.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="./assets/plugins/jquery/jquery-3.7.0.min.js"></script>
+    <script src="./assets/js/game.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 

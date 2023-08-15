@@ -1,3 +1,10 @@
+function resetViewPort() {
+
+}
+
 $(document).ready(function() {
-    alert(1);
-})
+    $(window).resize(resetViewPort);
+    resetViewPort();
+    let game = Game(document.getElementById("root"));
+});
+
