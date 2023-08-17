@@ -207,13 +207,13 @@ body {
     width: 50px;
     height: 50px;
     margin: auto;
-    border-width: 0px;
-    border-color: rgb(233, 1, 1);
-    border-style: solid;
+    outline-width: 0px;
+    outline-color: rgb(233, 1, 1);
+    outline-style: solid;
 }
 
 .lang-mode-item.active {
-    border-width: 4px;
+    outline-width: 4px;
 }
 
 .lang-mode-item img {
@@ -261,6 +261,14 @@ body {
     font-size: 20pt;
     font-weight: 600;
     margin: auto 5px;
+}
+
+.tool-bar-item.tool-bar-item-match-player[data-turn="0"].active {
+    outline: 3px solid red;
+}
+
+.tool-bar-item.tool-bar-item-match-player[data-turn="1"].active {
+    outline: 3px solid blue;
 }
 
 .card-board-content {
@@ -323,6 +331,37 @@ body {
     display: block;
 }
 
+.card-item.matched .card-inner-item-content {
+    display: block;
+    opacity: 0;
+    animation: flashing 3s;
+}
+
+.card-item.matched .card-inner-item-back {
+    display: none;
+}
+
+@keyframes flashing {
+
+    0%,
+    20%,
+    40%,
+    60%,
+    80% {
+        opacity: 1;
+        /* Fully visible */
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    100% {
+        opacity: 0;
+        /* Completely hidden */
+    }
+}
+
 .result-panel .result-container,
 .result-panel .mail-container {
     border-radius: 500px;
@@ -372,6 +411,10 @@ body {
     font-size: 20pt;
     font-weight: 600;
     margin-left: 20px;
+}
+
+.result-item.result-item-lose {
+    scale: 0.7;
 }
 
 .result-item [data-action=restart] {
