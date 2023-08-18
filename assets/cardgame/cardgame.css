@@ -1,208 +1,198 @@
-body {
-    margin: 0;
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;600;900&display=swap');
 
-.game-panel {
+.card-game-panel {
     font-family: 'Montserrat', sans-serif;
-}
-
-.game-panel {
-    border: 1px solid black;
     width: 900px;
     height: 900px;
     overflow: hidden;
 }
 
-.game-panel .hidden {
-    display: none;
-}
-
-.game-caption {
+.card-game-panel .game-caption {
     display: flex;
 }
 
-.game-caption .game-symbol-container {
+.card-game-panel .game-caption .game-symbol-container {
     margin: auto 0px;
     margin-left: auto;
     display: flex;
 }
 
-.game-symbol-container {
+.card-game-panel .game-symbol-container {
     margin-right: 0px;
     transition: 0.5s;
 }
 
-.game-symbol-container.player-mode-active {
+.card-game-panel .game-symbol-container.player-mode-active {
     margin-right: 15px;
 }
 
-.game-symbol-container .player-mode-symbol,
-.game-symbol-container .card-mode-symbol {
+.card-game-panel .game-symbol-container .player-mode-symbol,
+.card-game-panel .game-symbol-container .card-mode-symbol {
     width: 0px;
     height: 0px;
     opacity: 0;
     transition: 0.5s;
 }
 
-.game-symbol-container .player-mode-symbol {
+.card-game-panel .game-symbol-container .player-mode-symbol {
     margin-top: 50px;
 }
 
-.game-symbol-container .card-mode-symbol {
+.card-game-panel .game-symbol-container .card-mode-symbol {
     margin-top: 100px;
 }
 
-.game-symbol-container.player-mode-active .player-mode-symbol {
+.card-game-panel .game-symbol-container.player-mode-active .player-mode-symbol {
     margin-top: 0px;
     width: 100px;
     height: 100px;
     opacity: 1;
 }
 
-.game-symbol-container.card-mode-active .player-mode-symbol {
+.card-game-panel .game-symbol-container.card-mode-active .player-mode-symbol {
     width: 80px;
     height: 80px;
     opacity: 1;
     margin-right: -40px;
 }
 
-.game-symbol-container.card-mode-active .card-mode-symbol {
+.card-game-panel .game-symbol-container.card-mode-active .card-mode-symbol {
     width: 80px;
     height: 80px;
     margin-top: 50px;
     opacity: 1;
 }
 
-.game-caption .game-title {
+.card-game-panel .game-caption .game-title {
     margin-right: auto;
 }
 
-.game-caption .game-title img {
+.card-game-panel .game-caption .game-title img {
     width: 200px;
     height: auto;
 }
 
-.panel-container {
+.card-game-panel .panel-container {
     position: relative;
 }
 
-.panel {
+.card-game-panel .panel {
     position: absolute;
     transition: 1s;
 }
 
-.panel.active {
+.card-game-panel .panel.active {
     left: 0;
     right: 0;
     top: 0;
 }
 
-.mode-panel {
+.card-game-panel .mode-panel {
     left: -100%;
     right: 100%;
 }
 
-.card-panel {
+.card-game-panel .card-panel {
     top: 900px;
     left: 0;
     right: 0;
 }
 
-.result-panel {
+.card-game-panel .result-panel {
     top: 0;
     left: 100%;
     right: -100%;
 }
 
-.mode-container {
+.card-game-panel .mode-container {
     width: 100%;
     position: relative;
     height: 280px;
     overflow: hidden;
 }
 
-.mode-pane {
+.card-game-panel .mode-pane {
     position: absolute;
     padding-left: 150px;
     padding-right: 150px;
     transition: 1s;
 }
 
-.mode-container .player-mode-pane {
+.card-game-panel .mode-container .player-mode-pane {
     display: flex;
     left: 0;
     right: 0;
 }
 
-.mode-container .card-mode-pane {
+.card-game-panel .mode-container .card-mode-pane {
     left: 100%;
     right: -100%;
 }
 
-.card-mode-container {
+.card-game-panel .card-mode-container {
     display: flex;
 }
 
-.card-mode-pane .tool-bar-item {
+.card-game-panel .card-mode-pane .tool-bar-item {
     margin-left: auto;
     margin-right: auto;
     width: fit-content;
     margin-top: 10px;
 }
 
-.card-mode-pane .tool-bar-item img {
+.card-game-panel .card-mode-pane .tool-bar-item img {
     width: 40px;
     height: 40px;
 }
 
-.card-mode-active .player-mode-pane {
+.card-game-panel .card-mode-active .player-mode-pane {
     left: -100%;
     right: 100%;
 }
 
-.card-mode-active .card-mode-pane {
+.card-game-panel .card-mode-active .card-mode-pane {
     left: 0;
     right: 0;
 }
 
-.mode-item {
+.card-game-panel .mode-item {
     margin-left: auto;
     margin-right: auto;
 }
 
-.mode-item .mode-image-container img {
+.card-game-panel .mode-item .mode-image-container img {
     width: 200px;
     height: 200px;
 }
 
-.mode-item .mode-caption {
+.card-game-panel .mode-item .mode-caption {
     margin-top: 25px;
     font-size: 23pt;
     font-weight: bold;
     text-align: center;
 }
 
-.intro-pane {
+.card-game-panel .intro-pane {
     margin-top: 50px;
     padding: 0px 125px;
 }
 
-.intro-inner-pane {
+.card-game-panel .intro-inner-pane {
     background-color: rgb(242, 242, 242);
-    height: 250px;
+    height: 300px;
     width: 100%;
     border-radius: 10px;
     display: table;
 }
 
-.lang-mode-container {
+.card-game-panel .lang-mode-container {
     display: flex;
     margin-top: 15px;
     padding: 0px 150px;
     border-radius: 100%;
 }
 
-.lang-mode-item {
+.card-game-panel .lang-mode-item {
     border-radius: 100%;
     width: 50px;
     height: 50px;
@@ -212,39 +202,44 @@ body {
     outline-style: solid;
 }
 
-.lang-mode-item.active {
+.card-game-panel .lang-mode-item.active {
     outline-width: 4px;
 }
 
-.lang-mode-item img {
+.card-game-panel .lang-mode-item img {
     margin: 2px;
 }
 
-.intro-container {
+.card-game-panel .intro-container {
     margin-top: 15px;
-}
-
-.intro-container {
     color: rgb(30, 30, 30);
+    display: none;
+    font-weight: 600;
 }
 
-.intro-container .intro-title {
+.card-game-panel .intro-container.active {
+    display: block;
+}
+
+.card-game-panel .intro-container .intro-title {
     font-size: 20pt;
     text-align: center;
 }
 
-.intro-container .intro-content {
-    margin-top: 15px;
+.card-game-panel .intro-container .intro-content {
     font-size: 14pt;
     text-align: center;
+    padding: 15px;
+    height: 150px;
+    overflow: auto;
 }
 
-.tool-bar {
+.card-game-panel .tool-bar {
     display: flex;
     justify-content: center;
 }
 
-.tool-bar-item {
+.card-game-panel .tool-bar-item {
     display: flex;
     padding: 7px;
     margin: 0 10px;
@@ -252,47 +247,55 @@ body {
     border-radius: 100px;
 }
 
-.tool-bar-item img {
+.card-game-panel .tool-bar-item.tool-bar-item-data {
+    min-width: 100px;
+}
+
+.card-game-panel .tool-bar-item.tool-bar-item-timer {
+    min-width: 130px;
+}
+
+.card-game-panel .tool-bar-item img {
     width: 30px;
     height: 30px;
 }
 
-.tool-bar-item span {
+.card-game-panel .tool-bar-item span {
     font-size: 20pt;
     font-weight: 600;
-    margin: auto 5px;
+    margin: auto auto;
 }
 
-.tool-bar-item.tool-bar-item-match-player[data-turn="0"].active {
+.card-game-panel .tool-bar-item.tool-bar-item-match-player[data-turn="0"].active {
     outline: 3px solid red;
 }
 
-.tool-bar-item.tool-bar-item-match-player[data-turn="1"].active {
+.card-game-panel .tool-bar-item.tool-bar-item-match-player[data-turn="1"].active {
     outline: 3px solid blue;
 }
 
-.card-board-content {
+.card-game-panel .card-board-content {
     display: none;
 }
 
-.card-board-content.active {
+.card-game-panel .card-board-content.active {
     display: block;
 }
 
-.card-board-mode-18 {
+.card-game-panel .card-board-mode-18 {
     margin-top: 70px;
 }
 
-.card-board-mode-36 {
+.card-game-panel .card-board-mode-36 {
     margin-top: 60px;
 }
 
-.card-row {
+.card-game-panel .card-row {
     display: flex;
     justify-content: center;
 }
 
-.card-item {
+.card-game-panel .card-item {
     width: 80px;
     height: 80px;
     margin: 5px;
@@ -301,13 +304,13 @@ body {
     border: 4px solid rgb(36, 36, 36);
 }
 
-.card-board-mode-18 .card-item {
+.card-game-panel .card-board-mode-18 .card-item {
     width: 100px;
     height: 100px;
 }
 
-.card-item-content,
-.card-item-back {
+.card-game-panel .card-item-content,
+.card-game-panel .card-item-back {
     position: absolute;
     left: 0;
     right: 0;
@@ -315,29 +318,29 @@ body {
     bottom: 0;
 }
 
-.card-inner-item-content,
-.card-inner-item-back {
+.card-game-panel .card-inner-item-content,
+.card-game-panel .card-inner-item-back {
     width: 100%;
     height: 100%;
     background: white;
     border-radius: 4px;
 }
 
-.card-item .card-inner-item-content {
+.card-game-panel .card-item .card-inner-item-content {
     display: none;
 }
 
-.card-item.active .card-inner-item-content {
+.card-game-panel .card-item.active .card-inner-item-content {
     display: block;
 }
 
-.card-item.matched .card-inner-item-content {
+.card-game-panel .card-item.matched .card-inner-item-content {
     display: block;
     opacity: 0;
     animation: flashing 3s;
 }
 
-.card-item.matched .card-inner-item-back {
+.card-game-panel .card-item.matched .card-inner-item-back {
     display: none;
 }
 
@@ -362,66 +365,66 @@ body {
     }
 }
 
-.result-panel .result-container,
-.result-panel .mail-container {
+.card-game-panel .result-panel .result-container,
+.card-game-panel .result-panel .mail-container {
     border-radius: 500px;
     background-color: rgb(233, 239, 240)
 }
 
-.result-container {
+.card-game-panel .result-container {
     display: flex;
     margin: 0 150px;
     padding: 10px 20px;
     margin-top: 50px;
 }
 
-.result-inner-content-left {
+.card-game-panel .result-inner-content-left {
     width: 50%;
 }
 
-.result-inner-content-left img {
+.card-game-panel .result-inner-content-left img {
     margin: 40px;
     width: 180px;
     height: 180px;
 }
 
-.result-inner-content-right {
+.card-game-panel .result-inner-content-right {
     width: 50%;
     padding-left: 20px;
     display: flex;
     flex-direction: column;
 }
 
-.result-item {
+.card-game-panel .result-item {
     display: flex;
     margin: 20px;
 }
 
-.result-item * {
+.card-game-panel .result-item * {
     margin-top: auto;
     margin-bottom: auto;
 }
 
-.result-item img {
+.card-game-panel .result-item img {
     width: 40px;
     height: 40px;
 }
 
-.result-item span {
+.card-game-panel .result-item span {
     font-size: 20pt;
     font-weight: 600;
     margin-left: 20px;
 }
 
-.result-item.result-item-lose {
+.card-game-panel .result-item.result-item-lose {
     scale: 0.7;
 }
 
-.result-item [data-action=restart] {
+.card-game-panel .result-item [data-action=restart] {
     margin-left: 40px;
 }
 
-.mail-container {
+.card-game-panel .mail-container {
     display: flex;
     padding: 10px 30px;
     width: 350px;
@@ -430,27 +433,42 @@ body {
     margin-top: 20px;
 }
 
-.mail-container * {
+.card-game-panel .mail-container * {
     margin-top: auto;
     margin-bottom: auto;
 }
 
-.mail-container img {
+.card-game-panel .mail-container img {
     width: 40px;
     height: 40px;
 }
 
-.mail-input {
+.card-game-panel .mail-input {
     border: 0px solid transparent;
     border-bottom: 1px solid rgb(36, 36, 36);
     font-size: 14pt;
     padding: 2px 10px;
     margin-left: 20px;
-    width: 300px;
+    width: 250px;
     background-color: transparent;
     text-align: center;
 }
 
-.mail-input:focus-visible {
+.card-game-panel .mail-input:focus-visible {
     outline: none;
+}
+
+.card-game-panel img.mail-send-btn {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    margin-right: -10px;
+}
+
+.card-game-panel .custom-cursor-pointer {
+    cursor: pointer;
+}
+
+.card-game-panel .hidden {
+    display: none;
 }

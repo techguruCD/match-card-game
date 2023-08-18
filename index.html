@@ -1,18 +1,80 @@
 <!DOCTYPE html>
 <html>
+<meta charset="UTF-8">
 
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;600;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./assets/css/common.css">
+    <link rel="stylesheet" type="text/css" href="./assets/cardgame/cardgame.css">
 </head>
 
 <body>
     <div id="root"></div>
+
     <script src="./assets/plugins/jquery/jquery-3.7.0.min.js"></script>
-    <script src="./assets/js/game.js"></script>
-    <script src="./assets/js/script.js"></script>
+    <script src="./assets/cardgame/cardgame.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            let imageUrls = [
+                ['./assets/image/cards-JPG/01-image-01.jpg', './assets/image/cards-JPG/01-image-02.jpg'],
+                ['./assets/image/cards-JPG/02-image-01.jpg', './assets/image/cards-JPG/02-image-02.jpg'],
+                ['./assets/image/cards-JPG/03-image-01.jpg', './assets/image/cards-JPG/03-image-02.jpg'],
+                ['./assets/image/cards-JPG/04-image-01.jpg', './assets/image/cards-JPG/04-image-02.jpg'],
+                ['./assets/image/cards-JPG/05-image-01.jpg', './assets/image/cards-JPG/05-image-02.jpg'],
+                ['./assets/image/cards-JPG/06-image-01.jpg', './assets/image/cards-JPG/06-image-02.jpg'],
+                ['./assets/image/cards-JPG/07-image-01.jpg', './assets/image/cards-JPG/07-image-02.jpg'],
+                ['./assets/image/cards-JPG/08-image-01.jpg', './assets/image/cards-JPG/08-image-02.jpg'],
+                ['./assets/image/cards-JPG/09-image-01.jpg', './assets/image/cards-JPG/09-image-02.jpg'],
+            ];
+            let iconUrls = [
+                './assets/image/cards-JPG/01-icon.jpg',
+                './assets/image/cards-JPG/02-icon.jpg',
+                './assets/image/cards-JPG/03-icon.jpg',
+                './assets/image/cards-JPG/04-icon.jpg',
+                './assets/image/cards-JPG/05-icon.jpg',
+                './assets/image/cards-JPG/06-icon.jpg',
+                './assets/image/cards-JPG/07-icon.jpg',
+                './assets/image/cards-JPG/08-icon.jpg',
+                './assets/image/cards-JPG/09-icon.jpg'
+            ];
+
+            let game = new CardGame(document.getElementById("root"), {
+                titleImage: "./assets/image/icons-SVG/icon-01-temptitle.svg",
+                iconBack: './assets/image/cards-JPG/00-icons-back.jpg',
+                imageBack: './assets/image/cards-JPG/00-images-back.jpg',
+                images: imageUrls,
+                icons: iconUrls,
+                instructions: {
+                    'en': {
+                        title: 'Instructions',
+                        content: 'Instructions go here'
+                    },
+                    'de': {
+                        title: 'Anweisungen',
+                        content: 'Anweisungen finden Sie hier'
+                    },
+                    'fr': {
+                        title: 'Instructions',
+                        content: 'Les instructions vont ici'
+                    },
+                    'es': {
+                        title: 'Instrucciones',
+                        content: 'Las instrucciones van aquí'
+                    },
+                    'ch': {
+                        title: '指示',
+                        content: '说明请参见此处'
+                    }
+                }
+            });
+
+            game.onEmailSend = (emailAddress, emailContent) => {
+                // console.warn(emailAddress);
+                // console.log(emailContent);
+            }
+        });
+
+
+    </script>
 </body>
 
 </html>
