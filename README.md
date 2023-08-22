@@ -44,6 +44,7 @@ Below is the example of how to use it.
             ];
 
             let game = new CardGame(document.getElementById("root"), {
+                language: 'en',
                 titleImage: "./assets/image/icons-SVG/icon-01-temptitle.svg",
                 iconBack: './assets/image/cards-JPG/00-icons-back.jpg',
                 imageBack: './assets/image/cards-JPG/00-images-back.jpg',
@@ -91,6 +92,7 @@ Below is the example of how to use it.
 Initializes card game.<br>
 ```
 let game = new CardGame(document.getElementById("root"), {
+    language: 'en',
     titleImage: "./assets/image/icons-SVG/icon-01-temptitle.svg",
     iconBack: './assets/image/cards-JPG/00-icons-back.jpg',
     imageBack: './assets/image/cards-JPG/00-images-back.jpg',

@@ -362,6 +362,8 @@ function CardGame(gamePanel, options) {
 
     this.setOptions = (options) => {
         if (options) {
+            if (options.language)
+                this.setLanguage(options.language)
             if (options.titleImage)
                 this.setTitleIamge(options.titleImage);
             if (options.iconBack)
