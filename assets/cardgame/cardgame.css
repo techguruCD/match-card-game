@@ -5,6 +5,7 @@
     width: 900px;
     height: 900px;
     overflow: hidden;
+    position: relative;
 }
 
 .card-game-panel .game-caption {
@@ -267,11 +268,11 @@
 }
 
 .card-game-panel .tool-bar-item.tool-bar-item-match-player[data-turn="0"].active {
-    outline: 3px solid red;
+    outline: 3px solid #76c58f;
 }
 
 .card-game-panel .tool-bar-item.tool-bar-item-match-player[data-turn="1"].active {
-    outline: 3px solid blue;
+    outline: 3px solid #653c95;
 }
 
 .card-game-panel .card-board-content {
@@ -302,6 +303,15 @@
     position: relative;
     border-radius: 10px;
     border: 4px solid rgb(36, 36, 36);
+}
+
+.card-game-panel .card-item.matched {
+    border-color: rgb(62, 203, 112);
+    animation: border-anim 1.5s;
+}
+
+.card-game-panel .card-item.unmatched {
+    animation: vibrate 0.4s;
 }
 
 .card-game-panel .card-board-mode-18 .card-item {
@@ -336,8 +346,8 @@
 
 .card-game-panel .card-item.matched .card-inner-item-content {
     display: block;
-    opacity: 0;
-    animation: flashing 3s;
+    /* opacity: 0;
+    animation: flashing 3s; */
 }
 
 .card-game-panel .card-item.matched .card-inner-item-back {
@@ -362,6 +372,38 @@
     100% {
         opacity: 0;
         /* Completely hidden */
+    }
+}
+
+@keyframes vibrate {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70% {
+        transform: translateX(-3px);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translateX(3px);
+    }
+}
+
+@keyframes border-anim {
+    0%, 40%, 80%, 60%, 80% {
+        border-color: black;
+    }
+
+    20%, 60%, 100% {
+        border-color: rgb(62, 203, 112);
     }
 }
 
@@ -471,4 +513,13 @@
 
 .card-game-panel .hidden {
     display: none;
+}
+
+.card-game-panel>canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
 }
