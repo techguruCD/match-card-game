@@ -456,9 +456,6 @@ function CardGame(gamePanel, options) {
                             <div class="lang-mode-item custom-cursor-pointer" data-lang="tr">
                                 <img src="./assets/image/icons-SVG/icon-19-flag-tr.svg">
                             </div>
-                            <div class="lang-mode-item custom-cursor-pointer" data-lang="ch">
-                                <img src="./assets/image/icons-SVG/icon-16-flag-ch.svg">
-                            </div>
                         </div>
                         <div class="intro-container" data-lang="en">
                             <div class="intro-title">
@@ -501,14 +498,6 @@ function CardGame(gamePanel, options) {
                             </div>
                         </div>
                         <div class="intro-container" data-lang="tr">
-                            <div class="intro-title">
-                                INSTRUCTIONS
-                            </div>
-                            <div class="intro-content">
-                                Instructions go here.
-                            </div>
-                        </div>
-                        <div class="intro-container" data-lang="ch">
                             <div class="intro-title">
                                 INSTRUCTIONS
                             </div>
@@ -704,7 +693,7 @@ function CardGame(gamePanel, options) {
     }
 
     this.setInstructions = (instructions) => {
-        let langs = ['en', 'de', 'fr', 'es', 'pt', 'tr', 'ch'];
+        let langs = ['en', 'de', 'fr', 'es', 'pt', 'tr'];
         langs.forEach(lang => {
             let instruction = instructions[lang];
             if (instruction) {

@@ -202,11 +202,7 @@ game.setInstructions({
         'tr': {
             title: 'Talimatlar',
             content: 'Talimatlar buraya gelecek'
-        },
-		'ch': {
-			title: '指示',
-			content: '说明请参见此处'
-		}
+        }
 	});
 ```
 
