@@ -195,6 +195,14 @@ game.setInstructions({
 			title: 'Instrucciones',
 			content: 'Las instrucciones van aquí'
 		},
+        'pt': {
+                title: 'Instruções',
+                content: 'As instruções vão aqui'
+        },
+        'tr': {
+            title: 'Talimatlar',
+            content: 'Talimatlar buraya gelecek'
+        },
 		'ch': {
 			title: '指示',
 			content: '说明请参见此处'

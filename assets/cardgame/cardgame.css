@@ -2,7 +2,7 @@
 
 .card-game-panel {
     font-family: 'Montserrat', sans-serif;
-    width: 900px;
+    width: 1200px;
     height: 900px;
     overflow: hidden;
     position: relative;
@@ -296,9 +296,42 @@
     justify-content: center;
 }
 
+.card-game-panel .card-board-container .grid-row {
+    display: flex;
+    justify-content: center;
+    margin-left: 25px;
+}
+
+.card-game-panel .grid-item {
+    color: black;
+    font-weight: 600;
+    font-size: 15pt;
+    display: flex;
+}
+
+.card-game-panel .card-board-container .grid-row .grid-item {
+    width: 110px;
+    height: 30px;
+    margin: 0px 10px;
+    margin-bottom: 5px;
+    align-items: start;
+    justify-content: center;
+    border-bottom: 1px solid black;
+}
+
+.card-game-panel .card-board-container .card-row .grid-item {
+    height: 110px;
+    width: 20px;
+    margin: 10px 0px;
+    margin-right: 5px;
+    align-items: center;
+    justify-content: left;
+    border-right: 1px solid black;
+}
+
 .card-game-panel .card-item {
-    width: 80px;
-    height: 80px;
+    width: 112px;
+    height: 112px;
     margin: 5px;
     position: relative;
     border-radius: 10px;
@@ -315,8 +348,24 @@
 }
 
 .card-game-panel .card-board-mode-18 .card-item {
-    width: 100px;
-    height: 100px;
+    width: 152px;
+    height: 152px;
+}
+
+.card-game-panel .card-board-container .card-board-mode-18 .grid-row {
+    display: flex;
+    justify-content: center;
+    margin-left: 28px;
+}
+
+.card-game-panel .card-board-container .card-board-mode-18 .grid-row .grid-item {
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+.card-game-panel .card-board-container .card-board-mode-18 .card-row .grid-item {
+    height: 150px;
+    margin-right: 10px;
 }
 
 .card-game-panel .card-item-content,
@@ -398,11 +447,18 @@
 }
 
 @keyframes border-anim {
-    0%, 40%, 80%, 60%, 80% {
+
+    0%,
+    40%,
+    80%,
+    60%,
+    80% {
         border-color: black;
     }
 
-    20%, 60%, 100% {
+    20%,
+    60%,
+    100% {
         border-color: rgb(62, 203, 112);
     }
 }
@@ -415,7 +471,7 @@
 
 .card-game-panel .result-container {
     display: flex;
-    margin: 0 150px;
+    margin: 0 200px;
     padding: 10px 20px;
     margin-top: 50px;
 }
@@ -426,8 +482,9 @@
 
 .card-game-panel .result-inner-content-left img {
     margin: 40px;
-    width: 180px;
-    height: 180px;
+    margin-left: 75px;
+    width: 200px;
+    height: 200px;
 }
 
 .card-game-panel .result-inner-content-right {
@@ -439,7 +496,7 @@
 
 .card-game-panel .result-item {
     display: flex;
-    margin: 20px;
+    margin: 15px 20px;
 }
 
 .card-game-panel .result-item * {
@@ -448,8 +505,8 @@
 }
 
 .card-game-panel .result-item img {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
 }
 
 .card-game-panel .result-item span {
@@ -458,8 +515,25 @@
     margin-left: 20px;
 }
 
+.card-game-panel .result-item.player-score {
+    border: 5px solid transparent;
+    margin-right: auto;
+    padding: 5px;
+    border-radius: 100px;
+    padding-right: 20px;
+}
+
+.card-game-panel .result-item.player-score[data-player="1"] {
+    border-color: #76c58f;
+}
+
+.card-game-panel .result-item.player-score[data-player="2"] {
+    border-color: #653c95;
+}
+
 .card-game-panel .result-item.result-item-lose {
     scale: 0.7;
+    margin-left: 35px;
 }
 
 .card-game-panel .result-item [data-action=restart] {
@@ -513,6 +587,14 @@
 
 .card-game-panel .hidden {
     display: none;
+}
+
+.card-game-panel .m-t-auto {
+    margin-top: auto;
+}
+
+.card-game-panel .m-b-auto {
+    margin-bottom: auto;
 }
 
 .card-game-panel>canvas {

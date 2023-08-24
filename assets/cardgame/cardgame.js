@@ -353,16 +353,17 @@ class Universe {
     // Helpers
 
     updateSize() {
-        this.width = 900;
-        this.height = 900;
+        let width = 1200, height = 900;
+        this.width = width;
+        this.height = height;
         // this.width = window.innerWidth;
         // this.height = window.innerHeight;
         this.el.width = this.width * this.pixelRatio;
         this.el.height = this.height * this.pixelRatio;
         // this.el.style.width = this.width + 'px';
         // this.el.style.height = this.height + 'px';
-        this.el.style.width = '900px'
-        this.el.style.height = '900px'
+        this.el.style.width = `${width}px`
+        this.el.style.height = `${height}px`
         // this.el.style.width = window.innerWidth + 'px';
         // this.el.style.height = window.innerHeight + 'px';
         this.ctx.scale(this.pixelRatio, this.pixelRatio);
@@ -449,6 +450,12 @@ function CardGame(gamePanel, options) {
                             <div class="lang-mode-item custom-cursor-pointer" data-lang="es">
                                 <img src="./assets/image/icons-SVG/icon-18-flag-es.svg">
                             </div>
+                            <div class="lang-mode-item custom-cursor-pointer" data-lang="pt">
+                                <img src="./assets/image/icons-SVG/icon-16-flag-pt.svg">
+                            </div>
+                            <div class="lang-mode-item custom-cursor-pointer" data-lang="tr">
+                                <img src="./assets/image/icons-SVG/icon-19-flag-tr.svg">
+                            </div>
                             <div class="lang-mode-item custom-cursor-pointer" data-lang="ch">
                                 <img src="./assets/image/icons-SVG/icon-16-flag-ch.svg">
                             </div>
@@ -485,6 +492,22 @@ function CardGame(gamePanel, options) {
                                 Instructions go here.
                             </div>
                         </div>
+                        <div class="intro-container" data-lang="pt">
+                            <div class="intro-title">
+                                INSTRUCTIONS
+                            </div>
+                            <div class="intro-content">
+                                Instructions go here.
+                            </div>
+                        </div>
+                        <div class="intro-container" data-lang="tr">
+                            <div class="intro-title">
+                                INSTRUCTIONS
+                            </div>
+                            <div class="intro-content">
+                                Instructions go here.
+                            </div>
+                        </div>
                         <div class="intro-container" data-lang="ch">
                             <div class="intro-title">
                                 INSTRUCTIONS
@@ -503,7 +526,7 @@ function CardGame(gamePanel, options) {
                         <img src="./assets/image/icons-SVG/icon-10-win.svg">
                     </div>
                     <div class="result-inner-content-right">
-                        <div class="result-item result-item-click" data-mode="1">
+                        <div class="result-item result-item-click m-t-auto" data-mode="1">
                             <img src="./assets/image/icons-SVG/icon-12-click.svg">
                             <span>37</span>
                         </div>
@@ -511,15 +534,15 @@ function CardGame(gamePanel, options) {
                             <img src="./assets/image/icons-SVG/icon-11-time.svg">
                             <span>1:19</span>
                         </div>
-                        <div class="result-item" data-mode="2" data-player='1'>
+                        <div class="result-item player-score m-t-auto" data-mode="2" data-player='1'>
                             <img src="./assets/image/icons-SVG/icon-06-1phollow.svg">
                             <span>37</span>
                         </div>
-                        <div class="result-item" data-mode="2" data-player='2'>
+                        <div class="result-item player-score" data-mode="2" data-player='2'>
                             <img src="./assets/image/icons-SVG/icon-07-2phollow.svg">
                             <span>1:19</span>
                         </div>
-                        <div class="result-item">
+                        <div class="result-item m-b-auto">
                             <img class="custom-cursor-pointer" data-action="back" src="./assets/image/icons-SVG/icon-08-back.svg">
                             <img class="custom-cursor-pointer" data-action="restart" src="./assets/image/icons-SVG/icon-09-restart.svg">
                         </div>
@@ -568,20 +591,37 @@ function CardGame(gamePanel, options) {
                 col = 9;
             }
             let cardBoardHtml = ``;
-            for (let i = 0; i < row; i++) {
+            for (let i = -1; i < row; i++) {
                 let cardRowHtml = ``;
-                for (let j = 0; j < col; j++) {
-                    cardRowHtml +=
-                        `<div class="card-item ${(i + j) % 2 ? 'card-icon' : 'card-image'}">
-                            <div class="card-item-back">
-                                <img class="card-inner-item-back" src="./assets/image/cards-JPG/00-icons-back.jpg">
-                            </div>
-                            <div class="card-item-content">
-                                <img class="card-inner-item-content" src="./assets/image/cards-JPG/01-icon.jpg">
-                            </div>
-                        </div>`;
+                if (i != -1) {
+                    cardRowHtml += `<div class='grid-item'><span>${i + 1}</span></div>`
                 }
-                cardBoardHtml += `<div class="card-row">${cardRowHtml}</div>`;
+                for (let j = 0; j < col; j++) {
+                    if (i == -1) {
+                        cardRowHtml +=
+                            `<div class="grid-item">
+                                ${String.fromCharCode('A'.charCodeAt(0) + j)}
+                            </div>`;
+                    } else {
+                        cardRowHtml +=
+                            `<div class="card-item ${(i + j) % 2 ? 'card-icon' : 'card-image'}">
+                                <div class="card-item-back">
+                                    <img class="card-inner-item-back" src="./assets/image/cards-JPG/00-icons-back.jpg">
+                                </div>
+                                <div class="card-item-content">
+                                    <img class="card-inner-item-content" src="./assets/image/cards-JPG/01-icon.jpg">
+                                </div>
+                            </div>`;
+                    }
+                }
+                if (i == -1) {
+                    cardBoardHtml +=
+                        `<div class='grid-row'>
+                            ${cardRowHtml}
+                        </div>`;
+                } else {
+                    cardBoardHtml += `<div class="card-row">${cardRowHtml}</div>`;
+                }
             }
             return `<div class="card-board-mode-${mode} card-board-content active">${cardBoardHtml}</div>`
         }
@@ -664,7 +704,7 @@ function CardGame(gamePanel, options) {
     }
 
     this.setInstructions = (instructions) => {
-        let langs = ['en', 'de', 'fr', 'es', 'ch'];
+        let langs = ['en', 'de', 'fr', 'es', 'pt', 'tr', 'ch'];
         langs.forEach(lang => {
             let instruction = instructions[lang];
             if (instruction) {
